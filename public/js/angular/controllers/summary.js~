@@ -8,9 +8,9 @@ HirealchemyHcl.controller('MainController', function ($scope, $q, $http) {
                 url: '/logout',
                 method: 'GET',
                 data: params}).success(function(data) {
-		//console.log(data, 'data');
-                $scope.states = data.res;  
-		$scope.total = data.len;  
+		if(data.result) {
+			window.location.href = './login.html';
+		} 
             }).error(function(data) {
                 $scope.loginerror = "Error in server!";
             });
@@ -23,7 +23,7 @@ HirealchemyHcl.controller('SummaryController', function ($scope, $q, $http) {
 	$scope.prev = 'disabled';
 	$scope.next = '';
 
-	$scope.sort = 'a';
+	$scope.sort = 'name';
 
 	$scope.abbr_span = false;
 	$scope.abbr_span_m = true;

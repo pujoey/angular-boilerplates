@@ -23,7 +23,7 @@ HirealchemyHcl.controller('SummaryController', function ($scope, $q, $http) {
 	$scope.prev = 'disabled';
 	$scope.next = '';
 
-	$scope.sort = 'a';
+	$scope.sort = 'name';
 
 	$scope.abbr_span = false;
 	$scope.abbr_span_m = true;
@@ -77,6 +77,7 @@ HirealchemyHcl.controller('SummaryController', function ($scope, $q, $http) {
 	    $scope[show_id] = true;
 	}
         $scope.LoadStates = function(sort, offset) {
+	    $scope.sort = sort;
 	    $scope.checkLogin();
             $scope.chart_container1 = true;
 	    $scope.offset = offset;

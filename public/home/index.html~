@@ -76,8 +76,9 @@
 										 <span ng-show="time1_span" title="sort ascending" style="cursor:pointer;color:blue;" ng-click="LoadStatesSort('time-zone1', 0, 'time1_span', 'time1_span_m');">Time zone 1</span>
 										<span ng-show="time1_span_m" title="sort descending" style="cursor:pointer;color:blue;" ng-click="LoadStatesSort('-time-zone1', 0, 'time1_span_m', 'time1_span');">Time zone 1</span>
 									</th>
-<th>
+									<th>
 										 <span ng-show="time2_span" title="sort ascending" style="cursor:pointer;color:blue;" ng-click="LoadStatesSort('time-zone1', 0, 'time2_span', 'time2_span_m');">Time zone 2</span>
+										<span ng-show="time2_span_m" title="sort descending" style="cursor:pointer;color:blue;" ng-click="LoadStatesSort('-time-zone1', 0, 'time2_span_m', 'time2_span');">Time zone 2</span>
 									</th>
 								</tr>
 								</thead>
@@ -115,7 +116,7 @@
 								</tbody>
 								</table>
 							</div>
-<div class="row"><div class="col-md-5 col-sm-12"><div class="dataTables_info" id="sample_1_info" role="status" aria-live="polite">Showing {[offset+1]} to {[offset+limit]} of {[total]} states</div></div><div class="col-md-7 col-sm-12"><div class="dataTables_paginate paging_bootstrap_full_number" id="sample_1_paginate"><ul class="pagination" style="visibility: visible;"><li ng-if="prev == ''" class="prev {[prev]}"><a href="javascript:;" ng-click="LoadStates('name', (offset-limit));" title="Prev"><i class="fa fa-angle-left"></i></a></li><li ng-if="next == ''" class="next {[next]}"><a href="javascript:;" ng-click="LoadStates('name', (offset+limit));" title="Next"><i class="fa fa-angle-right"></i></a></li></ul></div></div></div>
+<div class="row"><div class="col-md-5 col-sm-12"><div class="dataTables_info" id="sample_1_info" role="status" aria-live="polite">Showing {[offset+1]} to {[offset+limit]} of {[total]} states</div></div><div class="col-md-7 col-sm-12"><div class="dataTables_paginate paging_bootstrap_full_number" id="sample_1_paginate"><ul class="pagination" style="visibility: visible;"><li ng-if="prev == ''" class="prev {[prev]}"><a href="javascript:;" ng-click="LoadStates(sort, (offset-limit));" title="Prev"><i class="fa fa-angle-left"></i></a></li><li ng-if="next == ''" class="next {[next]}"><a href="javascript:;" ng-click="LoadStates('name', (offset+limit));" title="Next"><i class="fa fa-angle-right"></i></a></li></ul></div></div></div>
 						</div>
 					</div>
 					<!-- END PORTLET-->
