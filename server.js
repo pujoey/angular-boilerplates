@@ -20,6 +20,7 @@ var msgs=[
     {user:"jessica", phone: "vilet", message:"was here!"}
 ]
 
+app.set('port', (process.env.PORT || 8888));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
@@ -140,6 +141,6 @@ app.get('/read', function(request, response) {
 });
 app.use(express.static(__dirname+'/public'));
 
-var server=app.listen(8888, function() {
-    console.log("We have started our server at http://localhost:8888");
+var server=app.listen(app.get('port'), function() {
+    console.log("We have started our server at ", app.get('port'));
 });
