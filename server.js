@@ -10,13 +10,14 @@ fs.readFile("states.json", function(err, data) {
     states = JSON.parse(data.toString());
 });
 var users={
+    jessica: "vilet",
     alice: "password1",
     bob: "password2",
     charlie: "password3",
     dan: "password4"
 };
 var msgs=[
-    {user:"kilroy", phone: "123 555 1212", message:"was here!"}
+    {user:"jessica", phone: "vilet", message:"was here!"}
 ]
 
 app.use(cookieParser());
@@ -137,7 +138,7 @@ app.post('/write', function(request, response) {
 app.get('/read', function(request, response) {
     response.json(msgs);
 });
-app.use(express.static(__dirname+'/public'));
+app.use(express.static(__dirname+'/public/login.html'));
 
 var server=app.listen(8888, function() {
     console.log("We have started our server at http://localhost:8888");

@@ -24,6 +24,7 @@
 		<img class="page-lock-img" src="new/images/photo.png" alt="">
 		<div class="page-lock-info" style="width:264px;" ng-init="checkLogin();">
 			<h3 style="color:#fff;">Sign in</h3>
+			<p>Jessica Vilet use username <strong>jessica</strong> and password <strong>vilet</strong></p>
 			<span ng-bind="loginerror" class="locked" style="color:#ff0000;"></span>
 			<form class="form-inline" action="index.html" style="margin-top:5px; margin-bottom:5px; padding:0px;">
 				<div class="input-group input-medium" style="margin-bottom:10px">
@@ -38,21 +39,9 @@
 					<span class="input-group-btn">
 					</span>
 				</div>
-				<div class="input-group input-medium" style="margin-top:5px;"> 
+				<div class="input-group input-medium" style="margin-top:5px;">
 					<button type="button" ng-click="Login()" class="btn blue icn-only pull-right">Login</button>
 				</div>
-
-				<!-- /input-group -->
-				<!-- <div class="relogin">
-					<a href="login.html">
-					Register Here 
-					</a>
-					<a>
-					 |
- 					</a>
-					<a href="login.html">
-					Forgot Password? </a>
-				</div> -->
 			</form>
 		</div>
 	</div>
@@ -69,7 +58,7 @@
 <script src="js/angular/controllers/login.js?ver=1.0.1" type="text/javascript"></script>
 
 <script>
-	jQuery(document).ready(function() {    
+	jQuery(document).ready(function() {
    		Metronic.init(); // init metronic core components
 		Layout.init(); // init current layout
 		Demo.init(); // init demo features
