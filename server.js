@@ -138,7 +138,7 @@ app.post('/write', function(request, response) {
 app.get('/read', function(request, response) {
     response.json(msgs);
 });
-app.use(express.static(__dirname+'/public/login.html'));
+app.use(express.static(__dirname+'/public'));
 
 var server=app.listen(8888, function() {
     console.log("We have started our server at http://localhost:8888");
