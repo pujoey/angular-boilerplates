@@ -11,6 +11,11 @@
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
 <link href="css/allmy.min.css" rel="stylesheet" type="text/css">
 <!-- <link rel="shortcut icon" href="favicon.ico"/> -->
+<style>
+	.white {
+		background-color: white;
+	}
+</style>
 </head>
 <body>
 
@@ -24,12 +29,12 @@
 		<img class="page-lock-img" src="new/images/photo.png" alt="">
 		<div class="page-lock-info" style="width:264px;" ng-init="checkLogin();">
 			<h3 style="color:#fff;">Sign in</h3>
-			<p>Jessica Vilet use username <strong>jessica</strong> and password <strong>vilet</strong></p>
+			<p>Jessica Vilet <br> username <strong>jessica</strong> and password <strong>vilet</strong></p>
 			<span ng-bind="loginerror" class="locked" style="color:#ff0000;"></span>
 			<form class="form-inline" action="index.html" style="margin-top:5px; margin-bottom:5px; padding:0px;">
 				<div class="input-group input-medium" style="margin-bottom:10px">
 
-					<input ng-model="username" type="text" class="form-control" placeholder="Mobile Or Email" style="width: 239px !important;" >
+					<input ng-model="username" type="text" class="form-control" placeholder="username" style="width: 239px !important;" >
 
 					<span class="input-group-btn">
 					</span>
