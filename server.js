@@ -24,26 +24,33 @@ app.set('port', (process.env.PORT || 8888));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+//RAISES Error 401 for an incorrect login
 function sendUnauthorized(response) {
     response.status(401);
     response.send("Unauthorized");
 }
+
 app.post('/login', function(request, response) {
     var user = request.body.user;
-    if (users[user] === undefined) {
+
+    //RAISES Error 401 for an incorrect login
+    if (users[user] === undefined || users[user] !== request.body.password) {
         return sendUnauthorized(response);
     }
-    if (users[user] !== request.body.password) {
-        return sendUnauthorized(response);
-    }
+
+    //OUTPUT {"result": true} and a cookie is set
     response.cookie('login', user);
     response.json({result: true});
 });
 
+//Logout the user
 app.get('/logout', function(request, response) {
+    //OUTPUT Cookie is removed
     response.clearCookie('login');
-    response.json({result: true});
+    response.redirect('/login.html');
 });
+
+//root
 app.get('/', function(request, response) {
     response.redirect('/home.html');
 });
@@ -95,12 +102,12 @@ app.get('/states',function(request, response) {
     }
     var limit = request.query.limit;
     if (limit === undefined) {
-        limit = 10;
+        limit = 50;
     } else {
         limit = +limit;
     }
     if (limit > 10) {
-        limit = 10;
+        limit = 50;
     }
     for (var ind=0; ind<states.length; ind++) {
         states[ind].city = states[ind]['most-populous-city'];
