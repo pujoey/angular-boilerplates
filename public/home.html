@@ -7,6 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://code.angularjs.org/1.4.8/angular-resource.min.js"></script>
   <script src="https://code.angularjs.org/1.4.8/angular-route.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.8/angular-cookies.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/main-controller.js"></script>
   <script src="js/resources/todo-resource.js"></script>
@@ -28,13 +29,14 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">TechniCOLOR Angular</a>
+            <a class="navbar-brand" href="#/home">TechniCOLOR Angular</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <!-- menu options only when loggedin -->
             <ul class="nav navbar-nav" ng-show="vm.isLoggedIn">
-              <li><a ng-href="#/main">Messages</a></li>
+              <li><a ng-href="#/home">Home</a></li>
+              <li><a ng-href="#/messages">Messages</a></li>
               <li><a ng-href="/logout">Logout</a></li>
             </ul>
           </div>
@@ -76,37 +78,13 @@
 
     <!-- views -->
     <div class="container">
-    <div ng-view=""></div>
+    <div ng-view></div>
     </div>
     <!-- views -->
 
-  <!--States view -->
-  <div class="container" ng-show="vm.isLoggedIn">
-    <br>
-    <h1 class="page-header">/States</h1>
-    <label for="singleSelect">Choose a State:</label><br>
-    <select id="singleSelect" name="singleSelect" class="form-control" ng-model="vm.selState" ng-change="vm.stateChanged()">
-      <option ng-repeat="state in vm.states" value="{{state.abbreviation}}">{{state.abbreviation}}</option>  <!-- interpolation -->
-    </select>
-    <br>
-    <hr>
-    <ul class="list-group">
-      <li class="list-group-item" ng-repeat="state in vm.states">
-        <h4>Name: {{state.name}}</h4>
-        <p>Abbreviation: {{state.abbreviation }}</p>
-        <p>capital: {{state.capital }}</p>
-        <p>most-populous-city: {{ state['most-populous-city'] }}</p>
-        <p>population: {{ state.population }}</p>
-        <p>square-miles: {{ state.miles }}</p>
-        <p>time-zone-1: {{state.time1}}</p>
-        <p>time-zone-2: {{state.time2}}</p>
-        <p>dst: {{state.dst}}</p>
-      </li>
-    </ul>
-  </div> <!--States view -->
-
 
   <!-- Footer -->
+  <br>
   <div class="footer">
     <div class="container text-center">
       <p>Made with <span class="glyphicon glyphicon-heart" style="color:red;"></span> from Joey Lin</p>

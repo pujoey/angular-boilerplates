@@ -1,22 +1,20 @@
-// (function() {
-// 'use strict';
-
-// angular.module('app', [
-//   'ngResource',
-//   'ngRoute'
-//    ])
-// })();
-// // 'use strict';
+'use strict';
 
 angular
   .module('app', [
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'ngCookies'
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/main', {
-        templateUrl: 'views/main.html',
+      .when('/home', {
+        templateUrl: 'views/states.html',
+        controller: 'MainController',
+        controllerAs: 'vm'
+      })
+      .when('/messages', {
+        templateUrl: 'views/messages.html',
         controller: 'MainController',
         controllerAs: 'vm'
       })
