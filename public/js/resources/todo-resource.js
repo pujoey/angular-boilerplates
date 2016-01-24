@@ -7,8 +7,8 @@ angular.module('app')
   Todo.$inject = ['$resource'];
 
   function Todo($resource) {
-
-    return $resource('/read');
+    var TodoResource = $resource('/read',{},{});
+    return TodoResource;
 
   }
 

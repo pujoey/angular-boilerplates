@@ -41,13 +41,14 @@ app.post('/login', function(request, response) {
     //OUTPUT {"result": true} and a cookie is set
     response.cookie('login', user);
     response.json({result: true});
+
 });
 
 //Logout the user
 app.get('/logout', function(request, response) {
     //OUTPUT Cookie is removed
     response.clearCookie('login');
-    response.redirect('/login.html');
+    response.redirect('/home.html');
 });
 
 //root

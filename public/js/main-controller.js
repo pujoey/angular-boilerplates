@@ -26,6 +26,7 @@ function MainController(Todo, State, $http) {
                    });
   };
 
+  // User Authentication
   vm.login = function(form) {
     var params = {
         "user": form.user.$viewValue,
@@ -48,6 +49,33 @@ function MainController(Todo, State, $http) {
 
   };
 
+  // read messages
+  vm.readMessages = function() {
+    Todo.query()
+     .$promise.then(function (all) {
+       vm.messages = all;
+     });
+  };
+  vm.readMessages();
+
+
+
+  // Add message click handler
+  vm.addMessage = function() {
+    console.log("addMessage fired");
+    var message = {"user": vm.newName, "phone": vm.newPhone, "message": vm.newMessage};
+    $http({
+        url: '/write',
+        method: 'POST',
+        data: message}).success(function(data) {
+        console.log("data", data);
+
+    }).error(function(data) {
+        vm.loginerror = "Error in server!";
+    });
+    vm.readMessages();
+
+  };
 
 
 
