@@ -16,27 +16,25 @@ Follow the instructions displayed on that webpage.
 
 # What URL should be used to access your application?
 
-
-http://localhost:8888/
+https://calm-shelf-81597.herokuapp.com/
 
 # What libraries did you use to write your application?
 
-AngularJS, Bootstrap
+Technologies: HTML | CSS | Bootstrap | Javascript/jQuery | AngularJS 
 
 # What influenced the design of your user interface?
 
-Bootstrap
+WDI class tutorial 'angular-restful-resources' served as template
 
 # What steps did you take to make your application user friendly?
 
-Added angularjs library to make two way data binding.
-Created single page application for user to navigate without refreshing full page.
+Added angularjs library to make two way data binding. MVVM
+Created single page application for user to navigate without refreshing page (NG-View)
 
 # What steps did you take to insure your application was secure?
 
-Checking authentication in each page only in front end.
+Use angular ng-hide/show for navbar menu options until user is authenticated.
 
 # What could be done to the front end or back end to make it more secure?
 
-We can check the authentication based on session instead of setting cookies only. 
-Session modules need to be enabled in the server side.
+Minification to hide and encapsulate infomation.
