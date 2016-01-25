@@ -8,7 +8,6 @@ MainController.$inject = ['Todo', 'State', '$http', '$cookies'];
 
 function MainController(Todo, State, $http, $cookies) {
   var vm = this;
-  vm.selUserId = '1';
   vm.selState = 'AL';
   vm.isLoggedIn = false;
 
@@ -64,7 +63,7 @@ function MainController(Todo, State, $http, $cookies) {
 
   // Add message click handler
   vm.addMessage = function() {
-    var message = {"user": vm.newName, "phone": vm.newPhone, "message": vm.newMessage};
+    var message = {"phone": vm.newPhone, "message": vm.newMessage};
     $http({
         url: '/write',
         method: 'POST',
