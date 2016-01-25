@@ -4,7 +4,7 @@
     <h1 class="page-header"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> /STATES</h1>
     <label for="singleSelect">Choose a State:</label><br>
     <select id="singleSelect" name="singleSelect" class="form-control" ng-model="vm.selState" ng-change="vm.stateChanged()">
-      <option ng-repeat="state in vm.states" value="{{state.abbreviation}}">{{state.abbreviation}}</option>  <!-- interpolation -->
+      <option ng-repeat="state in vm.statesList" value="{{state.abbreviation}}">{{state.abbreviation}}</option>  <!-- interpolation -->
     </select>
     <br>
     <hr>

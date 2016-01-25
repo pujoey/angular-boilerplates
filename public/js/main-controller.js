@@ -17,6 +17,7 @@ function MainController(Todo, State, $http, $cookies) {
   vm.states = State.get()
                    .$promise.then(function (all) {
                      vm.states= all.res;
+                     vm.statesList= all.res;
                    });
 
   // Retrieve by state by selecting the abbreviation from drop down list
@@ -47,11 +48,6 @@ function MainController(Todo, State, $http, $cookies) {
     }).error(function(data) {
         vm.loginerror = "Error in server!";
     });
-
-      // COOKIE TESTING - NOT WORKING
-      // var cook = $cookies.get('Login');
-      // // var cook = document.cookie;
-      // console.log(cook);
 
   };
 
