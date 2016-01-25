@@ -54,7 +54,7 @@
   <div class="container" ng-hide="vm.isLoggedIn">
     <div class="row">
       <div class="col-sm-12">
-        <h1 class="page-header">/Sign In</h1>
+        <h1 class="page-header"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> /SIGN IN</h1>
         <p>Username: <strong>jessica</strong> ,Password: <strong>vilet</strong></p>
         <form class="form" name="form" ng-submit="vm.login(form)" novalidate>
           <span ng-bind="vm.loginerror" class="locked" style="color:#ff0000;"></span>
@@ -78,12 +78,11 @@
   </div>
   <!-- Login Screen -->
 
-    <!-- views -->
-    <div class="container">
-    <div ng-view></div>
-    </div>
-    <!-- views -->
-
+  <!-- views -->
+  <div class="container">
+  <div ng-view></div>
+  </div>
+  <!-- views -->
 
   <!-- Footer -->
   <br>
@@ -93,29 +92,6 @@
     </div>
   </div>
   <!-- Footer -->
-
-
-  <!-- Angular RESTFUL todos
-  <select class="form-control" ng-model="vm.selUserId" ng-change="vm.userChanged()">
-    <option ng-repeat="user in vm.users" value="{{user.id}}">{{user.firstName}}</option>
-  </select>
-  <br>
-  <input type="text" class="form-control" placeholder="new todo..." ng-model="vm.newTodo">
-  <br>
-  <button class="btn btn-success" ng-click="vm.addTodo()">Add Todo</button>
-  <hr>
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="todo in vm.todos" ng-click="vm.selectTodo(todo)">
-      <span ng-hide="vm.todoEditing === todo">{{todo.title}}</span>
-      <span ng-show="vm.todoEditing === todo">
-        <input type="text" ng-model="todo.title">
-        <button class="btn btn-xs btn-info" ng-click="vm.doneEditing(todo)">Save</button>
-      </span>
-      <br>
-      <input type="checkbox" ng-model="todo.completed" ng-change="todo.$update()"> Done
-      <button class="btn btn-xs btn-danger" ng-click="vm.deleteTodo(todo)">X</button>&nbsp;
-    </li>
-  </ul>   -->
 
 </body>
 </html>
