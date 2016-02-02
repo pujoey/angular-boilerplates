@@ -10,14 +10,14 @@ fs.readFile("states.json", function(err, data) {
     states = JSON.parse(data.toString());
 });
 var users={
-    jessica: "vilet",
+    demo: "1234",
     alice: "password1",
     bob: "password2",
     charlie: "password3",
     dan: "password4"
 };
 var msgs=[
-    {user:"jessica", phone: "vilet", message:"was here!"}
+    {user:"joey", phone: "313-979-7132", message:"was here!"}
 ]
 
 app.set('port', (process.env.PORT || 8888));
