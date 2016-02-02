@@ -12,15 +12,15 @@
   <div class="table-responsive">
     <table border="1" width="100%" class="table table-hover table-bordered table-striped text-center">
     <tr >
-    <th class="text-center" ng-click="vm.orderByMe('name')">Name</th>
-    <th class="text-center" ng-click="vm.orderByMe('abbreviation')">Abbreviation</th>
-    <th class="text-center" ng-click="vm.orderByMe('capital')">Capital</th>
-    <th class="text-center" ng-click="vm.orderByMe('most-populous-city')">Most-populous-city</th>
-    <th class="text-center" ng-click="vm.orderByMe('population')">Population</th>
-    <th class="text-center" ng-click="vm.orderByMe('miles')">Miles</th>
-    <th class="text-center" ng-click="vm.orderByMe('time-zone-1')">Time-zone-1</th>
-    <th class="text-center" ng-click="vm.orderByMe('time-zone-2')">Time-zone-2</th>
-    <th class="text-center" ng-click="vm.orderByMe('dst')">Daylight Saving Time?</th>
+    <th class="text-center" ng-click="vm.orderByMe('name')">Name <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
+    <th class="text-center" ng-click="vm.orderByMe('abbreviation')">Abbreviation <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
+    <th class="text-center" ng-click="vm.orderByMe('capital')">Capital <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
+    <th class="text-center" ng-click="vm.orderByMe('most-populous-city')">Most-populous-city <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
+    <th class="text-center" ng-click="vm.orderByMe('population')">Population <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
+    <th class="text-center" ng-click="vm.orderByMe('miles')">Miles <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
+    <th class="text-center" ng-click="vm.orderByMe('time-zone-1')">Time-zone-1 <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
+    <th class="text-center" ng-click="vm.orderByMe('time-zone-2')">Time-zone-2 <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
+    <th class="text-center" ng-click="vm.orderByMe('dst')">Daylight Saving Time? <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
     </tr>
     <tr ng-repeat="state in vm.states | orderBy: vm.myOrderBy: vm.reverse">
     <td>{{state.name}}</td>

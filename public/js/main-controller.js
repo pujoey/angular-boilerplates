@@ -81,11 +81,11 @@ function MainController(Todo, State, $http, $cookies) {
     vm.readMessages();
   };
 
+
   //sorting states
   vm.orderByMe = function(x) {
         vm.myOrderBy = x;
         vm.reverse = !vm.reverse;
-        console.log(vm.reverse);
   }
 
 }
