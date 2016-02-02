@@ -26,6 +26,12 @@ function MainController(Todo, State, $http, $cookies) {
                    });
   };
 
+  $http.get('/states.json').success(function (data) {
+    vm.test = data;
+  }).error(function (data) {
+    vm.test = data;
+  });
+
   // User Authentication
   vm.login = function(form) {
     var params = {
@@ -74,6 +80,13 @@ function MainController(Todo, State, $http, $cookies) {
     //read message again for update
     vm.readMessages();
   };
+
+  //sorting states
+  vm.orderByMe = function(x) {
+        vm.myOrderBy = x;
+        vm.reverse = !vm.reverse;
+        console.log(vm.reverse);
+  }
 
 }
 

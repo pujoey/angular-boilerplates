@@ -1,26 +1,40 @@
-<!--States view -->
-  <div class="container">
-    <br>
-    <h1 class="page-header"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> /STATES</h1>
-    <label for="singleSelect">Choose a State:</label><br>
-    <select id="singleSelect" name="singleSelect" class="form-control" ng-model="vm.selState" ng-change="vm.stateChanged()">
-      <option ng-repeat="state in vm.statesList" value="{{state.abbreviation}}">{{state.abbreviation}}</option>  <!-- interpolation -->
-    </select>
-    <br>
-    <hr>
-    <ul class="list-group">
-      <li class="list-group-item" ng-repeat="state in vm.states">
-        <h4>Name: {{state.name}}</h4>
-        <p>Abbreviation: {{state.abbreviation }}</p>
-        <p>capital: {{state.capital }}</p>
-        <p>most-populous-city: {{ state['most-populous-city'] }}</p>
-        <p>population: {{ state.population }}</p>
-        <p>square-miles: {{ state.miles }}</p>
-        <p>time-zone-1: {{state.time1}}</p>
-        <p>time-zone-2: {{state.time2}}</p>
-        <p>dst: {{state.dst}}</p>
-      </li>
-    </ul>
-  </div>
+<!-- States view -->
+<div class="container">
+  <br>
+  <h1 class="page-header"><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> States</h1>
+  <label for="singleSelect">Choose a State:</label><br>
+  <select id="singleSelect" name="singleSelect" class="form-control" ng-model="vm.selState" ng-change="vm.stateChanged()">
+    <option ng-repeat="state in vm.statesList" value="{{state.abbreviation}}">{{state.abbreviation}}</option>
+    <!-- interpolation -->
+  </select>
+  <br>
   <hr>
-<!--States view -->
+  <div class="table-responsive">
+    <table border="1" width="100%" class="table table-hover table-bordered table-striped text-center">
+    <tr >
+    <th class="text-center" ng-click="vm.orderByMe('name')">Name</th>
+    <th class="text-center" ng-click="vm.orderByMe('abbreviation')">Abbreviation</th>
+    <th class="text-center" ng-click="vm.orderByMe('capital')">Capital</th>
+    <th class="text-center" ng-click="vm.orderByMe('most-populous-city')">Most-populous-city</th>
+    <th class="text-center" ng-click="vm.orderByMe('population')">Population</th>
+    <th class="text-center" ng-click="vm.orderByMe('miles')">Miles</th>
+    <th class="text-center" ng-click="vm.orderByMe('time-zone-1')">Time-zone-1</th>
+    <th class="text-center" ng-click="vm.orderByMe('time-zone-2')">Time-zone-2</th>
+    <th class="text-center" ng-click="vm.orderByMe('dst')">Daylight Saving Time?</th>
+    </tr>
+    <tr ng-repeat="state in vm.states | orderBy: vm.myOrderBy: vm.reverse">
+    <td>{{state.name}}</td>
+    <td>{{state.abbreviation}}</td>
+    <td>{{state.capital}}</td>
+    <td>{{state['most-populous-city']}}</td>
+    <td>{{ state.population | number }}</td>
+    <td>{{ state.miles | number }}</td>
+    <td>{{ state['time-zone-1'] }}</td>
+    <td>{{ state['time-zone-2'] }}</td>
+    <td>{{ state.dst }}</td>
+    </tr>
+    </table>
+  </div>
+
+</div>
+<hr>
