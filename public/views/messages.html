@@ -8,23 +8,30 @@
       </ul>
     </div>
   </div>
-
+  <hr>
   <br>
-  <br>
-  <form class="thing-form">
-    <label>Add a message...</label>
-    <p class="input-group">
-      <div class="col-lg-2">
-        <input type="tel" class="form-control" placeholder="PHONE" ng-model="vm.newPhone">
+  <div class="container well">
+    <h3 class="text-center">New Message</h3>
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="control-label col-md-2 col-md-offset-2" for="email">Phone:</label>
+        <div class="col-md-2">
+          <input type="tel" class="form-control" id="tel" placeholder="(xxx) xxx-xxxx" ng-model="vm.newPhone">
+        </div>
       </div>
-      <div class="col-lg-4">
-        <input type="text" class="form-control" placeholder="MESSAGE" ng-model="vm.newMessage">
+      <div class="form-group">
+        <label class="control-label col-md-2 col-md-offset-2" for="message">Message:</label>
+        <div class="col-md-4">
+          <textarea type="text" class="form-control" id="message" placeholder="Enter message here..." rows="4" ng-model="vm.newMessage"></textarea>
+        </div>
       </div>
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="vm.addMessage()">Add New</button>
-      </span>
-    </p>
-  </form>
+      <div class="form-group">
+        <div class="col-md-2 col-md-offset-7">
+          <button type="submit" class="btn btn-primary" ng-click="vm.addMessage()">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 <hr>
 <!-- READ/WRITE MESSAGES -->
