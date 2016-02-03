@@ -26,12 +26,6 @@ function MainController(Todo, State, $http, $cookies) {
                    });
   };
 
-  $http.get('/states.json').success(function (data) {
-    vm.test = data;
-  }).error(function (data) {
-    vm.test = data;
-  });
-
   // User Authentication
   vm.login = function(form) {
     var params = {

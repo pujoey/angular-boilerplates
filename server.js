@@ -17,7 +17,7 @@ var users={
     dan: "password4"
 };
 var msgs=[
-    {user:"joey", phone: "313-979-7132", message:"was here!"}
+    {user:"joey", phone: "(313) 979-7132", message:"was here!"}
 ]
 
 app.set('port', (process.env.PORT || 8888));
