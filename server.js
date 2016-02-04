@@ -48,12 +48,12 @@ app.post('/login', function(request, response) {
 app.get('/logout', function(request, response) {
     //OUTPUT Cookie is removed
     response.clearCookie('login');
-    response.redirect('/home.html');
+    response.redirect('home.html');
 });
 
 //root
 app.get('/', function(request, response) {
-    response.redirect('/home.html');
+    response.redirect('home.html');
 });
 
 

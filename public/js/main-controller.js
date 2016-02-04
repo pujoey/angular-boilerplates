@@ -4,9 +4,9 @@
 angular.module('app')
   .controller('MainController', MainController);
 
-MainController.$inject = ['Todo', 'State', '$http', '$cookies'];
+MainController.$inject = ['Todo', 'State', '$http', '$cookies', '$location'];
 
-function MainController(Todo, State, $http, $cookies) {
+function MainController(Todo, State, $http, $cookies, $location) {
   var vm = this;
   vm.selState = 'AL';
   vm.isLoggedIn = false;
@@ -39,7 +39,7 @@ function MainController(Todo, State, $http, $cookies) {
     .success(function(data) {
         if (data.result) {
           vm.isLoggedIn = true;
-          window.location.href = '#/home';
+          $location.path('/home');
         } else {
           vm.loginerror = "Incorrect username or password!";
         }

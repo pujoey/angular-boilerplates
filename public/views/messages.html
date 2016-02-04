@@ -15,23 +15,25 @@
   <br>
   <div class="container outset">
     <h3 class="text-center">New Message</h3>
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" role="form" name="message" ng-submit="message.$valid && vm.addMessage()" novalidate>
       <div class="form-group">
         <label class="control-label col-md-2" for="email">Phone:</label>
         <div class="col-md-4">
           <!-- Phone input custom directive "phone-input" -->
-          <input type="tel" class="form-control" id="tel" placeholder="(xxx) xxx-xxxx" phone-input ng-model="vm.newPhone">
+          <input type="tel" name="tel" ng-minlength="14" ng-maxlength="14"  class="form-control" id="tel" placeholder="(xxx) xxx-xxxx" phone-input ng-model="vm.newPhone" ng-required="true">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-md-2" for="message">Message:</label>
         <div class="col-md-9">
-          <textarea type="text" class="form-control" id="message" placeholder="Enter message here..." rows="5" ng-model="vm.newMessage"></textarea>
+
+          <textarea type="text" class="form-control" id="msg" placeholder="Enter message here..." rows="5" ng-model="vm.newMessage" ng-required="true"></textarea>
         </div>
       </div>
       <div class="form-group">
         <div class="col-md-2 col-md-offset-2">
-          <button type="submit" class="btn btn-primary" ng-click="vm.addMessage()">Submit</button>
+          <button type="submit" class="btn btn-primary" ng-disabled="!message.$valid">Submit</button>
+          <p>Form is {{message.$valid}}</p>
         </div>
       </div>
     </form>
