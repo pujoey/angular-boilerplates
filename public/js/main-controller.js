@@ -8,7 +8,7 @@ MainController.$inject = ['Todo', 'State', '$http', '$cookies', '$location'];
 
 function MainController(Todo, State, $http, $cookies, $location) {
   var vm = this;
-  vm.selState = 'AL';
+  vm.selState = '';
   vm.isLoggedIn = false;
 
   // Retrieve all states at start of home.html

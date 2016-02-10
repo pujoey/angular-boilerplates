@@ -5,7 +5,6 @@
   <label for="singleSelect">Choose a State:</label><br>
   <select id="singleSelect" name="singleSelect" class="col-md-1 col-lg-1" ng-model="vm.selState" ng-change="vm.stateChanged()">
     <option ng-repeat="state in vm.statesList" value="{{state.abbreviation}}">{{state.abbreviation}}</option>
-    <!-- interpolation -->
   </select>
   <br>
   <hr>
