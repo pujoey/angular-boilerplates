@@ -1,41 +1,14 @@
-<!-- States view -->
+<!-- About view -->
+
 <div class="container well">
-  <br>
-  <h1 class="page-header"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> /STATES</h1>
-  <label for="singleSelect">Choose a State:</label><br>
-  <select id="singleSelect" name="singleSelect" class="col-md-1 col-lg-1" ng-model="vm.selState" ng-change="vm.stateChanged()">
-    <option ng-repeat="state in vm.statesList" value="{{state.abbreviation}}">{{state.abbreviation}}</option>
-  </select>
-  <br>
-  <hr>
-  <div class="table-responsive">
-    <table class="table table-hover table-bordered table-striped text-center">
-    <tr class="info">
-    <th class="text-center">#</th>
-    <th class="text-center" ng-click="vm.orderByMe('name')">Name <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
-    <th class="text-center" ng-click="vm.orderByMe('abbreviation')">Abbre. <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
-    <th class="text-center" ng-click="vm.orderByMe('capital')">Capital <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
-    <th class="text-center" ng-click="vm.orderByMe('most-populous-city')">Most-populous-city <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
-    <th class="text-center" ng-click="vm.orderByMe('population')">Population <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
-    <th class="text-center" ng-click="vm.orderByMe('miles')">Miles <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
-    <th class="text-center" ng-click="vm.orderByMe('time-zone-1')">Time-zone-1 <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
-    <th class="text-center" ng-click="vm.orderByMe('time-zone-2')">Time-zone-2 <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
-    <th class="text-center" ng-click="vm.orderByMe('dst')">Daylight Saving? <span class="glyphicon" ng-class="{'glyphicon-triangle-top' : vm.reverse, 'glyphicon-triangle-bottom' : !vm.reverse}" aria-hidden="true"></span></th>
-    </tr>
-    <tr ng-class-even="'info'" ng-repeat="state in vm.states | orderBy: vm.myOrderBy: vm.reverse">
-    <td>{{$index +1}}</td>
-    <td>{{state.name}}</td>
-    <td>{{state.abbreviation}}</td>
-    <td>{{state.capital}}</td>
-    <td>{{state['most-populous-city']}}</td>
-    <td>{{ state.population | number }}</td>
-    <td>{{ state.miles | number }}</td>
-    <td>{{ state['time-zone-1'] }}</td>
-    <td>{{ state['time-zone-2'] }}</td>
-    <td>{{ state.dst }}</td>
-    </tr>
-    </table>
-  </div>
+  <div id="about" class="container">
+    <div class="page-header">
+
+      <h2 class="text-center">Who am I?</h2>
+    </div>
+    <p class="lead text-center">A web developer specializing in full-stack development. In my previous job, I had 4 years of working as manufacturing engineer at Foxconn with 3 years supervisory experience overseeing a team of 7 engineers.
+As an engineer, I accumulated a great deal of experience in the lean and kaizen methodologies, which means I am adept at optimizing processes and eliminating waste.  <br>
+Now, as an aspiring full-stack web developer, I hope to apply those same principles of efficiency and productivity to my process of coding and web development.  </p>
 
 </div>
 <hr>

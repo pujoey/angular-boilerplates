@@ -11,20 +11,7 @@ function MainController(Todo, State, $http, $cookies, $location) {
   vm.selState = '';
   vm.isLoggedIn = false;
 
-  // Retrieve all states at start of home.html
-  vm.states = State.get()
-                   .$promise.then(function (all) {
-                     vm.states= all.res;
-                     vm.statesList= all.res;
-                   });
 
-  // Retrieve by state by selecting the abbreviation from drop down list
-  vm.stateChanged = function() {
-    vm.states = State.get({abbreviation: vm.selState})
-                   .$promise.then(function (data) {
-                     vm.states= [data];
-                   });
-  };
 
   // User Authentication
   vm.login = function(form) {
